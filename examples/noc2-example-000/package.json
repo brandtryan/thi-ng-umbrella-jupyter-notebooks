@@ -1,0 +1,44 @@
+{
+	"name": "@example/noc2-example-000",
+	"version": "0.0.1",
+	"private": true,
+	"description": "rdom-canvas-basics Example",
+	"repository": "https://github.com/brandtryan/umbrella",
+	"author": "Brandt Ryan",
+	"license": "Apache-2.0",
+	"scripts": {
+		"start": "vite --host --open",
+		"build": "tsc && vite build --base='./'",
+		"preview": "vite preview --host --open"
+	},
+	"devDependencies": {
+		"typescript": "^5.8.3",
+		"vite": "^6.3.5"
+	},
+	"dependencies": {
+		"@thi.ng/compose": "workspace:^",
+		"@thi.ng/dsp": "workspace:^",
+		"@thi.ng/geom": "workspace:^",
+		"@thi.ng/rdom-canvas": "workspace:^",
+		"@thi.ng/rstream": "workspace:^",
+		"@thi.ng/transducers": "workspace:^",
+		"@thi.ng/vectors": "workspace:^"
+	},
+	"keywords": [
+		"animation",
+		"random",
+		"weightedProbability",
+		"canvas",
+		"nature-of-code"
+	],
+	"browser": {
+		"process": false
+	},
+	"thi.ng": {
+		"readme": [
+			"random",
+			"hiccup-canvas"
+		],
+		"screenshot": "examples/boid-basics.png"
+	}
+}

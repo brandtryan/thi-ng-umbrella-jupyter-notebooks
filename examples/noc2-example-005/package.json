@@ -1,0 +1,40 @@
+{
+	"name": "@example/noc2-example-005",
+	"version": "0.0.1",
+	"private": true,
+	"description": "An Accept-Reject Distribution",
+	"repository": "https://github.com/brandtryan/umbrella",
+	"author": "Brandt Ryan",
+	"license": "Apache-2.0",
+	"scripts": {
+		"start": "vite --host --open",
+		"build": "tsc && vite build --base='./'",
+		"preview": "vite preview --host --open"
+	},
+	"devDependencies": {
+		"typescript": "^5.8.3",
+		"vite": "^6.3.5"
+	},
+	"dependencies": {
+		"@thi.ng/hiccup": "workspace:^",
+		"@thi.ng/hiccup-canvas": "workspace:^",
+		"@thi.ng/random": "workspace:^"
+	},
+	"keywords": [
+		"animation",
+		"random",
+		"weightedProbability",
+		"canvas",
+		"nature-of-code"
+	],
+	"browser": {
+		"process": false
+	},
+	"thi.ng": {
+		"readme": [
+			"random",
+			"hiccup-canvas"
+		],
+		"screenshot": "examples/boid-basics.png"
+	}
+}

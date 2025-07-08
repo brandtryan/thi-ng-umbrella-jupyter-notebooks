@@ -1,0 +1,22 @@
+{
+	"decls": [
+		["@keyframes" ,"shrink", { "height": "var(--shrink-size)" }, { "height": 0 }]
+	],
+	"tpls": [
+		{
+			"name": "shrink",
+			"props": {
+				"--shrink-size": "{0}",
+				"animation": "shrink {1}s ease-out forward"
+			},
+			"doc": {
+				"group": "animation",
+				"desc": "Animation which shrinks the height from given value down to zero",
+				"args": [
+					"height: initial height (incl. units)",
+					"duration: in seconds"
+				]
+			}
+		}
+	]
+}

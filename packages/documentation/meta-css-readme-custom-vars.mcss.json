@@ -1,0 +1,13 @@
+{
+	"vars": {
+		"svg": ["fill", "stroke"]
+	},
+	"specs": [
+		{
+			"name": "<var>-<k>",
+			"props": { "<var>": "<v>" },
+			"values": { "black": "#000", "white": "#fff", "current": "currentColor" },
+			"vars": ["svg"]
+		}
+	]
+}

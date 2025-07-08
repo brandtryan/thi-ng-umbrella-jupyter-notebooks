@@ -1,0 +1,14 @@
+{
+	"tables": {
+		"margins": [0, 0.5, 1]
+	},
+	"specs": [
+		{
+			"name": "m<vid><k>",
+			"props": "margin<var>",
+			"values": "margins",
+			"unit": "rem",
+			"vars": ["a", "t", "r", "b", "l", "h", "v"]
+		}
+	]
+}

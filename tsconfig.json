@@ -18,5 +18,9 @@
 		"useDefineForClassFields": true,
 		"verbatimModuleSyntax": true
 	},
-	"exclude": ["./**/node_modules", "./**/test/fixtures"]
+	"exclude": [
+		"./**/node_modules",
+		"./**/test/fixtures",
+		"./packages/documentation"
+	]
 }

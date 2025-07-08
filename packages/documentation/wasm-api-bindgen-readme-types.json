@@ -1,0 +1,43 @@
+[
+    {
+        "name": "EventType",
+        "type": "enum",
+        "tag": "u8",
+        "doc": "Supported event types",
+        "values": [
+            { "name": "mouse", "value": 1, "doc": "Any kind of mouse event" },
+            { "name": "key", "doc": "Key down/up event" },
+            "misc"
+        ]
+    },
+    {
+        "name": "MouseEvent",
+        "type": "struct",
+        "tag": "extern",
+        "doc": "Example struct",
+        "fields": [
+            { "name": "type", "type": "EventType" },
+            { "name": "pos", "type": "u16", "tag": "array", "len": 2 }
+        ]
+    },
+    {
+        "name": "KeyEvent",
+        "type": "struct",
+        "tag": "extern",
+        "doc": "Example struct",
+        "fields": [
+            { "name": "type", "type": "EventType" },
+            { "name": "key", "type": "string", "doc": "Name of key which triggered event" },
+            { "name": "modifiers", "type": "u8", "doc": "Bitmask of active modifier keys" }
+        ]
+    },
+    {
+        "name": "Event",
+        "type": "union",
+        "tag": "extern",
+        "fields": [
+            { "name": "mouse", "type": "MouseEvent" },
+            { "name": "key", "type": "KeyEvent" }
+        ]
+    }
+]

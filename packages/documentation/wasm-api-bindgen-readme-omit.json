@@ -1,0 +1,23 @@
+[
+	{
+		"name": "TestOpts",
+		"type": "struct",
+		"doc": [
+			"Apart from the first field (`a`), all others in this struct ",
+			"will only be partially generated in TypeScript..."
+		],
+		"fields": [
+			{ "name": "a", "type": "i32" },
+			{ "name": "b", "type": "i32", "getter": false },
+			{ "name": "c", "type": "i32", "setter": false },
+			{ "name": "d", "type": "TestType", "getter": false, "setter": false }
+		]
+	},
+	{
+		"name": "TestType",
+		"type": "enum",
+		"doc": "This enum will not be generated at all for TypeScript",
+		"values": ["a", "b", "c"],
+		"skip": ["ts"]
+	}
+]

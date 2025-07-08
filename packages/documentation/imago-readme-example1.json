@@ -1,0 +1,35 @@
+[
+	{ "op": "rotate" },
+	{ "op": "extend", "border": 5, "unit": "%", "ref": "min", "bg": "#fff" },
+	{ "op": "resize", "size": 1920 },
+	{
+		"op": "composite",
+		"layers": [
+			{
+				"type": "img",
+				"path": "logo-128.png",
+				"pos": { "l": 45, "b": 5 },
+				"unit": "%",
+				"blend": "screen"
+			}
+		]
+	},
+	{
+		"op": "exif",
+		"tags": {
+			"IFD0": {
+				"Copyright": "Karsten Schmidt",
+				"Software": "@thi.ng/imago"
+			}
+		}
+	},
+	{
+		"op": "output",
+		"id": "hires",
+		"path": "{name}-{sha256}-{w}x{h}.avif",
+		"avif": { "quality": 80 }
+	},
+	{ "op": "crop", "size": [240, 240], "gravity": "c" },
+	{ "op": "output", "id": "thumb", "path": "{name}-thumb.jpg" },
+	{ "op": "output", "id": "hash", "blurhash": 4 }
+]

@@ -1,0 +1,9 @@
+#app { pa2 }
+
+.bt-group-v > a {
+	{
+		// override border radii
+		:first-child { brt4 }
+		:last-child { brb4 }
+	}
+}

@@ -1,0 +1,23 @@
+body {
+	// no margins
+	ma0
+	// default colors
+	bg-color-white color-black
+	// colors for dark mode
+	dark:bg-color-black dark:color-white
+}
+
+#app { ma3 }
+
+.bt-group-v > a {
+	db w-100 l:w-50 ph3 pv2 bwb1
+	dark:bg-color-purple dark:color-white dark:b--color-black
+	light:bg-color-light-blue light:color-black light:b--color-white
+
+	// nested selectors
+	{
+		:hover { bg-color-gold color-black anim:bg-anim2 }
+		:first-child { brt3 }
+		:last-child { brb3 bwb0 }
+	}
+}

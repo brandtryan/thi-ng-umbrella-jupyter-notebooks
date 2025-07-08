@@ -1,0 +1,5 @@
+body {
+	background-image-[url(bg.png)]
+	dark:background-image-[url(bg-alt.png)]
+	ma0 pa3 sans-serif
+}

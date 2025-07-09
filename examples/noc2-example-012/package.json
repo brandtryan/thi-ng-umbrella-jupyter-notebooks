@@ -1,8 +1,8 @@
 {
-	"name": "@example/noc2-exercise-09",
+	"name": "@example/noc2-example-012",
 	"version": "0.0.1",
 	"private": true,
-	"description": "Traditional Random Walker",
+	"description": "Vector Bouncing Ball",
 	"repository": "https://github.com/brandtryan/umbrella",
 	"author": "Brandt Ryan",
 	"license": "Apache-2.0",

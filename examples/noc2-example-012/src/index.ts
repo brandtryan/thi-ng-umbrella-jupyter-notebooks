@@ -1,6 +1,5 @@
 import { canvas2d } from "@thi.ng/canvas";
 import { draw } from "@thi.ng/hiccup-canvas";
-import { SYSTEM, normal } from "@thi.ng/random";
 import { circle } from "@thi.ng/geom";
 
 // --- FP CORE ---
@@ -8,12 +7,10 @@ import { circle } from "@thi.ng/geom";
 // 1. STATE REPRESENTATION
 const WIDTH = 640;
 const HEIGHT = 240;
-const MEAN = WIDTH / 2;
-const STD_DEV = 60;
-const FILL_COLOR = "rgba(0, 0, 0, 0.04)"; // Semi-transparent black
+const app = document.getElementById("app");
+const BALL = circle([0, 0], 24, { fill: [0, 0, 0, 0.5], stroke: [0, 0, 0, 1] });
 
 // --- Main Application Logic ---
-const app = document.getElementById("app");
 
 // 1. Setup Canvas
 // The `canvas2d` function creates a canvas element, gets its 2D context,

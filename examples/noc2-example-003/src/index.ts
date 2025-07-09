@@ -7,7 +7,7 @@ import { add, type Vec } from "@thi.ng/vectors";
 // --- FP CORE ---
 
 // 1. STATE REPRESENTATION
-const canvasSize: Vec = [window.innerWidth / 2, window.innerHeight / 2];
+const canvasSize: Vec = [640, 240];
 let walkerPos: Vec = [canvasSize[0] / 2, canvasSize[1] / 2];
 
 // The possible directions the walker can move, represeted as array of vectors
@@ -32,7 +32,7 @@ const updateWalker = (pos: Vec): Vec => {
 const viewWalker = (pos: Vec) => {
 	// Use hiccup-canvas format for drawing the walker.
 	// Use circle - points are invisible basically
-	return ["circle", { stroke: "#fff" }, pos, 1]; // pos is the center, 5 is the radius
+	return ["circle", { stroke: "#fff" }, pos, 1];
 };
 
 // --- Application Setup & Main Loop ---

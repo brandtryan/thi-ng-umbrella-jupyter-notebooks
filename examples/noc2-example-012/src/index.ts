@@ -1,49 +1,45 @@
+import { type Vec, add } from "@thi.ng/vectors";
 import { canvas2d } from "@thi.ng/canvas";
 import { draw } from "@thi.ng/hiccup-canvas";
-import { circle } from "@thi.ng/geom";
-
-// --- FP CORE ---
 
 // 1. STATE REPRESENTATION
-const WIDTH = 640;
-const HEIGHT = 240;
-const app = document.getElementById("app");
-const BALL = circle([0, 0], 24, { fill: [0, 0, 0, 0.5], stroke: [0, 0, 0, 1] });
+const canvasSize = [640, 240];
+let pos: Vec = [100, 100];
+let vel: Vec = [2.5, 2];
 
-// --- Main Application Logic ---
+// 2. BEHAVIOR (as a pure function)
+function update() {
+	pos = add(pos, pos, vel);
+	if (pos[0] > canvasSize[0] || pos[0] < 0) {
+		vel[0] = vel[0] * -1;
+	}
+	if (pos[1] > canvasSize[1] || pos[1] < 0) {
+		vel[1] = vel[1] * -1;
+	}
+	return pos;
+}
 
-// 1. Setup Canvas
-// The `canvas2d` function creates a canvas element, gets its 2D context,
-// and appends it to app div
-const { ctx } = canvas2d(WIDTH, HEIGHT, app);
-
-// 2. Setup PRNG
-// The `normal` function returns a new function which in turn produces a
-// random number following a normal(Gaussian?) distribution with the given options.
-const randomX = normal(SYSTEM, MEAN, STD_DEV);
-
-// 3. Animation Loop
-const animate = () => {
-	// Generate a new random x-coordinate
-	const x = randomX();
-	const y = HEIGHT / 2;
-
-	// Create a circle using the random coordinate.
-	const dot = circle([x, y], 8);
-
-	// Define the visual style of the circle (hiccup format)
-	const shape = [
-		"g", // 'g' is a group element that can hold attributes
-		{ fill: FILL_COLOR },
-		dot
-	];
-
-	// `draw` renders data structure onto the canvas.
-	draw(ctx, shape);
-
-	// Request the next animation frame (creates drawing loop)
-	requestAnimationFrame(animate);
+// 3. VIEW (as a pure function)
+const viewWalker = (pos: Vec) => {
+	return ["circle", { stroke: "#000", fill: "#9a9b9e" }, pos, 24];
 };
 
-// 4. Start the animation
-animate();
+// --- Application Setup & Main Loop ---
+
+const app = document.getElementById("app")!;
+const { ctx } = canvas2d(canvasSize[0], canvasSize[1], app);
+
+const frame = () => {
+	const scene = [["rect", { fill: "#fff" }, [0, 0], canvasSize[0],
+		canvasSize[1]], [viewWalker(update())]];
+
+	draw(ctx, [scene]);
+
+	requestAnimationFrame(frame);
+};
+
+// Draw the initial background *once* before the loop starts. [PAINTING]
+// draw(ctx, [
+// 	["rect", { fill: "#242424" }, [0, 0], canvasSize[0], canvasSize[1]]
+// ]);
+frame();

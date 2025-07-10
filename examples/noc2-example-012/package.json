@@ -1,49 +1,52 @@
 {
 	"name": "@example/noc2-example-012",
-	"version": "0.0.1",
 	"private": true,
-	"description": "Vector Bouncing Ball",
-	"repository": "https://github.com/brandtryan/umbrella",
-	"author": "Brandt Ryan",
+	"version": "0.0.1",
+	"description": "Example 1.2",
+	"repository": "https://github.com/thi-ng/umbrella",
+	"author": "Karsten Schmidt <k+npm@thi.ng>",
 	"license": "Apache-2.0",
 	"scripts": {
 		"start": "vite --host --open",
 		"build": "tsc && vite build --base='./'",
 		"preview": "vite preview --host --open"
 	},
-	"devDependencies": {
-		"typescript": "^5.8.3",
-		"vite": "^6.3.5"
-	},
 	"dependencies": {
-		"@thi.ng/hiccup": "workspace:^",
+		"@thi.ng/canvas": "workspace:^",
+		"@thi.ng/color": "workspace:^",
+		"@thi.ng/geom": "workspace:^",
 		"@thi.ng/hiccup-canvas": "workspace:^",
+		"@thi.ng/math": "workspace:^",
 		"@thi.ng/random": "workspace:^",
+		"@thi.ng/rstream": "workspace:^",
+		"@thi.ng/transducers": "workspace:^",
 		"@thi.ng/vectors": "workspace:^"
 	},
-	"keywords": [
-		"2d",
-		"animation",
-		"behavior",
-		"canvas",
-		"example",
-		"vector",
-		"nature-of-code"
-	],
 	"browser": {
-		"process": false
+		"process": false,
+		"setTimeout": false,
+		"util": false
 	},
 	"thi.ng": {
 		"readme": [
-			"boids",
-			"color",
 			"geom",
-			"geom-accel",
-			"math",
-			"rdom-canvas",
-			"timestep",
-			"vectors"
+			"hiccup-canvas"
 		],
-		"screenshot": "examples/boid-basics.png"
-	}
+		"screenshot": "examples/hiccup-canvas-arcs.jpg"
+	},
+	"devDependencies": {
+		"@thi.ng/meta-css": "workspace:^",
+		"typescript": "^5.8.3",
+		"vite": "^6.3.5"
+	},
+	"keywords": [
+		"browser",
+		"canvas",
+		"color",
+		"example",
+		"geometry",
+		"reactive",
+		"transducer",
+		"vector"
+	]
 }

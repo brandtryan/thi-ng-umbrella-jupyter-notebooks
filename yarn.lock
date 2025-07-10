@@ -1665,10 +1665,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@example/noc2-example-000@workspace:examples/noc2-example-000"
   dependencies:
-    "@thi.ng/compose": "workspace:^"
-    "@thi.ng/dsp": "workspace:^"
+    "@thi.ng/canvas": "workspace:^"
+    "@thi.ng/color": "workspace:^"
     "@thi.ng/geom": "workspace:^"
-    "@thi.ng/rdom-canvas": "workspace:^"
+    "@thi.ng/hiccup-canvas": "workspace:^"
+    "@thi.ng/math": "workspace:^"
+    "@thi.ng/meta-css": "workspace:^"
+    "@thi.ng/random": "workspace:^"
     "@thi.ng/rstream": "workspace:^"
     "@thi.ng/transducers": "workspace:^"
     "@thi.ng/vectors": "workspace:^"

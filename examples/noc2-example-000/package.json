@@ -1,50 +1,55 @@
 {
 	"name": "@example/noc2-example-000",
-	"version": "0.0.1",
 	"private": true,
-	"description": "Brandt Testing",
+	"version": "0.0.1",
+	"description": "Brandt Test",
 	"repository": "https://github.com/thi-ng/umbrella",
 	"author": "Karsten Schmidt <k+npm@thi.ng>",
 	"license": "Apache-2.0",
 	"scripts": {
-		"start": "vite --host --open",
-		"build": "tsc && vite build --base='./'",
+		"start": "yarn css:build && yarn start:only",
+		"start:only": "vite --host --open",
+		"dev": "mprocs 'yarn css:watch' 'yarn start:only'",
+		"css:watch": "../../node_modules/.bin/metacss develop --bundle --watch --pretty --out-specs css/framework.json --out-css css/style.css --force @css/includes.txt ../../packages/meta-css/specs/*.mcss.json css/*.mcss.json css/*.mcss",
+		"css:build": "../../node_modules/.bin/metacss develop --bundle --out-specs css/framework.json --out-css css/style.css --force @css/includes.txt ../../packages/meta-css/specs/*.mcss.json css/*.mcss.json css/*.mcss",
+		"build": "yarn css:build && tsc && vite build --base='./'",
 		"preview": "vite preview --host --open"
-	},
-	"devDependencies": {
-		"typescript": "^5.8.3",
-		"vite": "^6.3.5"
 	},
 	"dependencies": {
 		"@thi.ng/canvas": "workspace:^",
 		"@thi.ng/color": "workspace:^",
-		"@thi.ng/color-palettes": "workspace:^",
+		"@thi.ng/geom": "workspace:^",
 		"@thi.ng/hiccup-canvas": "workspace:^",
 		"@thi.ng/math": "workspace:^",
 		"@thi.ng/random": "workspace:^",
+		"@thi.ng/rstream": "workspace:^",
 		"@thi.ng/transducers": "workspace:^",
 		"@thi.ng/vectors": "workspace:^"
 	},
 	"browser": {
-		"process": false
+		"process": false,
+		"setTimeout": false,
+		"util": false
 	},
 	"thi.ng": {
 		"readme": [
-			"canvas",
-			"color",
-			"color-palettes",
-			"hiccup-canvas",
-			"random",
-			"transducers"
+			"geom",
+			"hiccup-canvas"
 		],
-		"screenshot": "examples/hiccup-canvas-basics.png"
+		"screenshot": "examples/hiccup-canvas-arcs.jpg"
+	},
+	"devDependencies": {
+		"@thi.ng/meta-css": "workspace:^",
+		"typescript": "^5.8.3",
+		"vite": "^6.3.5"
 	},
 	"keywords": [
 		"browser",
 		"canvas",
 		"color",
 		"example",
-		"palette",
+		"geometry",
+		"reactive",
 		"transducer",
 		"vector"
 	]

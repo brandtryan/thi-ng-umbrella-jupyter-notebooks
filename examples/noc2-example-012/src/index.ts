@@ -20,7 +20,7 @@ function update() {
 }
 
 // 3. VIEW (as a pure function)
-const viewWalker = (pos: Vec) => {
+const viewBall = (pos: Vec) => {
 	return ["circle", { stroke: "#000", fill: "#9a9b9e" }, pos, 24];
 };
 
@@ -31,13 +31,12 @@ const { ctx } = canvas2d(canvasSize[0], canvasSize[1], app);
 
 const frame = () => {
 	const scene = [["rect", { fill: "#fff" }, [0, 0], canvasSize[0],
-		canvasSize[1]], [viewWalker(update())]];
+		canvasSize[1]], [viewBall(update())]];
 
 	draw(ctx, [scene]);
 
 	requestAnimationFrame(frame);
 };
-
 // Draw the initial background *once* before the loop starts. [PAINTING]
 // draw(ctx, [
 // 	["rect", { fill: "#242424" }, [0, 0], canvasSize[0], canvasSize[1]]

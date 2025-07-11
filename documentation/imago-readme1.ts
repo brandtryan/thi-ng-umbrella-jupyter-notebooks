@@ -6,6 +6,6 @@ import { readJSON } from "@thi.ng/file-io";
 
 await processImage(
 	"test.jpg",
-	readJSON("readme-example1.json"),
+	readJSON("imago-readme-example1.json"),
 	{ outDir: "." }
 );

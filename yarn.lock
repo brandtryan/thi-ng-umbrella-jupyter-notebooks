@@ -2956,6 +2956,25 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@example/testing@workspace:examples/noc2-test-things":
+  version: 0.0.0-use.local
+  resolution: "@example/testing@workspace:examples/noc2-test-things"
+  dependencies:
+    "@thi.ng/canvas": "workspace:^"
+    "@thi.ng/color": "workspace:^"
+    "@thi.ng/geom": "workspace:^"
+    "@thi.ng/hiccup-canvas": "workspace:^"
+    "@thi.ng/math": "workspace:^"
+    "@thi.ng/meta-css": "workspace:^"
+    "@thi.ng/random": "workspace:^"
+    "@thi.ng/rstream": "workspace:^"
+    "@thi.ng/transducers": "workspace:^"
+    "@thi.ng/vectors": "workspace:^"
+    typescript: "npm:^5.8.3"
+    vite: "npm:^6.3.5"
+  languageName: unknown
+  linkType: soft
+
 "@example/text-canvas-image@workspace:examples/text-canvas-image":
   version: 0.0.0-use.local
   resolution: "@example/text-canvas-image@workspace:examples/text-canvas-image"

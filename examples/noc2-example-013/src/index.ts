@@ -3,7 +3,6 @@ import { fromRAF } from "@thi.ng/rstream";
 import { canvas2d } from "@thi.ng/canvas";
 import { draw } from "@thi.ng/hiccup-canvas";
 import { line } from "@thi.ng/geom";
-import { RGB565 } from "@thi.ng/pixel";
 
 // --- SETUP ---
 const WIDTH = 640;

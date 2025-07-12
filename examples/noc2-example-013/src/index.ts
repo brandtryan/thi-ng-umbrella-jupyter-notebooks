@@ -1,44 +1,63 @@
-import { type Vec, add } from "@thi.ng/vectors";
+import { type Vec, add, sub, normalize, limit, ZERO2 } from "@thi.ng/vectors";
+import { fromRAF } from "@thi.ng/rstream";
 import { canvas2d } from "@thi.ng/canvas";
 import { draw } from "@thi.ng/hiccup-canvas";
+import { circle, line } from "@thi.ng/geom";
 
-// 1. STATE REPRESENTATION
-const canvasSize = [640, 240];
-let pos: Vec = [100, 100];
-let vel: Vec = [2.5, 2];
+// SETUP
+const WIDTH = 640;
+const HEIGHT = 240;
+const { ctx } = canvas2d(WIDTH, HEIGHT, document.getElementById("app"));
 
-// 2. BEHAVIOR (as a pure function)
-function update() {
-	pos = add(pos, pos, vel);
-	if (pos[0] > canvasSize[0] || pos[0] < 0) {
-		vel[0] = vel[0] * -1;
-	}
-	if (pos[1] > canvasSize[1] || pos[1] < 0) {
-		vel[1] = vel[1] * -1;
-	}
-	return pos;
+interface Mover {
+	pos: Vec;
+	vel: Vec;
 }
 
-// 3. VIEW (as a pure function)
-const viewBall = (pos: Vec) => {
-	return ["circle", { stroke: "#000", fill: "#9a9b9e" }, pos, 24];
+interface AppState {
+	mover: Mover;
+}
+
+let state: AppState = {
+	mover: {
+		pos: [100, 100],
+		vel: [2.5, 2]
+	},
 };
 
-// --- Application Setup & Main Loop ---
+// UPDATE
+const update = (currentState: AppState): AppState => {
+	const mover = { ...currentState.mover };
+	mover.pos = add(null, mover.pos, mover.vel);
 
-const app = document.getElementById("app")!;
-const { ctx } = canvas2d(canvasSize[0], canvasSize[1], app);
+	// Edges
+	if (mover.pos[0] > WIDTH || mover.pos[0] < 0) {
+		mover.vel[0] = mover.vel[0] * -1;
+	}
+	if (mover.pos[1] > HEIGHT || mover.pos[1] < 0) {
+		mover.vel[1] = mover.vel[1] * -1;
+	}
 
-const frame = () => {
-	const scene = [["rect", { fill: "#fff" }, [0, 0], canvasSize[0],
-		canvasSize[1]], [viewBall(update())]];
-
-	draw(ctx, [scene]);
-
-	requestAnimationFrame(frame);
+	return {
+		...currentState,
+		mover,
+	};
 };
-// Draw the initial background *once* before the loop starts. [PAINTING]
-// draw(ctx, [
-// 	["rect", { fill: "#242424" }, [0, 0], canvasSize[0], canvasSize[1]]
-// ]);
-frame();
+
+// VIEW
+const view = (currentState: AppState) => [
+	"g", {},
+	["rect", { fill: "#333" }, [0, 0], WIDTH, HEIGHT],
+	["g", { fill: "none", stroke: "#fff", "stroke-width": 2 },
+		circle(currentState.mover.pos, 24)
+	]
+];
+
+fromRAF().subscribe({
+	next() {
+		const newState = update(state);
+		const scene = view(newState);
+		draw(ctx, scene);
+		state = newState;
+	}
+});

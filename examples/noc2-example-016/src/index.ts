@@ -1,63 +1,45 @@
-import { type Vec, add, sub, normalize, limit, ZERO2 } from "@thi.ng/vectors";
+import { circle, group, line, translate } from "@thi.ng/geom";
+import { $canvas } from "@thi.ng/rdom-canvas";
 import { fromRAF } from "@thi.ng/rstream";
-import { canvas2d } from "@thi.ng/canvas";
-import { draw } from "@thi.ng/hiccup-canvas";
-import { circle, line } from "@thi.ng/geom";
+import { mulN, normalize, sub, type Vec } from "@thi.ng/vectors";
 
-// SETUP
-const WIDTH = 640;
-const HEIGHT = 240;
-const { ctx } = canvas2d(WIDTH, HEIGHT, document.getElementById("app"));
+const WIDTH = 600;
+const HEIGHT = 600;
+const ORIGIN: Vec = [0, 0];
+const CENTER: Vec = [WIDTH / 2, HEIGHT / 2];
 
-interface Mover {
-	pos: Vec;
-	vel: Vec;
-}
+let MOUSE: Vec = [...CENTER];
 
-interface AppState {
-	mover: Mover;
-}
-
-let state: AppState = {
-	mover: {
-		pos: [100, 100],
-		vel: [2.5, 2]
-	},
-};
-
-// UPDATE
-const update = (currentState: AppState): AppState => {
-	const mover = { ...currentState.mover };
-	mover.pos = add(null, mover.pos, mover.vel);
-
-	// Edges
-	if (mover.pos[0] > WIDTH || mover.pos[0] < 0) {
-		mover.vel[0] = mover.vel[0] * -1;
-	}
-	if (mover.pos[1] > HEIGHT || mover.pos[1] < 0) {
-		mover.vel[1] = mover.vel[1] * -1;
-	}
-
-	return {
-		...currentState,
-		mover,
-	};
-};
-
-// VIEW
-const view = (currentState: AppState) => [
-	"g", {},
-	["rect", { fill: "#333" }, [0, 0], WIDTH, HEIGHT],
-	["g", { fill: "none", stroke: "#fff", "stroke-width": 2 },
-		circle(currentState.mover.pos, 24)
-	]
-];
-
-fromRAF().subscribe({
-	next() {
-		const newState = update(state);
-		const scene = view(newState);
-		draw(ctx, scene);
-		state = newState;
-	}
+document.addEventListener("mousemove", (event) => {
+	MOUSE = [event.clientX, event.clientY];
 });
+
+// create geometry stream/subscription
+const geo = fromRAF().map(() => {
+	const vecFromCenter: Vec = sub([], MOUSE, CENTER);
+	const fixedLengthVec: Vec =
+		vecFromCenter[0] === 0 && vecFromCenter[1] === 0
+			? [0, 0]
+			: mulN([], normalize([], vecFromCenter), 50);
+
+	// shape group w/ attribs (also see section in readme)
+	return group(
+		{ __background: "#0ff" },
+		[
+			// This group acts like p5.js's `translate(width / 2, height / 2);`
+			// All shapes inside it are relative to the canvas center.
+			group({ translate: CENTER }, [
+				// Line 1: Thin & gray, from origin (center) to the mouse vector
+				line(ORIGIN, vecFromCenter, { stroke: "#fff", weight: 2 }),
+
+				// Line 2: Thick & black, from origin (center) to the fixed-length vector
+				line(ORIGIN, fixedLengthVec, { stroke: "#000", weight: 8 }),
+			]),
+		]
+	)
+});
+
+// create & mount canvas component (w/ fixed size)
+const app: HTMLElement = document.getElementById("app");
+$canvas(geo, [600, 600]).mount(app);
+

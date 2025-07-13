@@ -1,0 +1,50 @@
+{
+	"name": "@example/rdom-canvas",
+	"version": "0.0.1",
+	"private": true,
+	"description": "",
+	"repository": "https://github.com/thi-ng/umbrella",
+	"author": "Brandt Ryan",
+	"license": "Apache-2.0",
+	"scripts": {
+		"start": "vite --host --open",
+		"build": "tsc && vite build --base='./'",
+		"preview": "vite preview --host --open"
+	},
+	"devDependencies": {
+		"typescript": "^5.8.3",
+		"vite": "^7.0.3"
+	},
+	"dependencies": {
+		"@thi.ng/geom": "workspace:^",
+		"@thi.ng/rdom-canvas": "workspace:^",
+		"@thi.ng/rstream": "workspace:^",
+		"@thi.ng/transducers": "workspace:^"
+	},
+	"keywords": [
+		"2d",
+		"acceleration",
+		"animation",
+		"behavior",
+		"browser",
+		"canvas",
+		"example",
+		"geometry"
+	],
+	"browser": {
+		"process": false
+	},
+	"thi.ng": {
+		"readme": [
+			"boids",
+			"color",
+			"geom",
+			"geom-accel",
+			"math",
+			"rdom-canvas",
+			"timestep",
+			"vectors"
+		],
+		"screenshot": "examples/boid-basics.png"
+	}
+}

@@ -1,7 +1,6 @@
 import { circle, group } from "@thi.ng/geom";
 import { $canvas } from "@thi.ng/rdom-canvas";
 import { fromRAF } from "@thi.ng/rstream";
-import { repeatedly } from "@thi.ng/transducers";
 
 // create geometry stream/subscription
 const geo = fromRAF().map((t) =>

@@ -40,6 +40,5 @@ const geo = fromRAF().map(() => {
 });
 
 // create & mount canvas component (w/ fixed size)
-const app: HTMLElement = document.getElementById("app");
-$canvas(geo, [600, 600]).mount(app);
+$canvas(geo, [600, 600]).mount(document.getElementById("app")!);
 

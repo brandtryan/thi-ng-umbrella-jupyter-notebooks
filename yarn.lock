@@ -364,9 +364,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@example/014@workspace:examples/noc2-example-014":
+"@example/014@workspace:examples/noc2-example-1-04":
   version: 0.0.0-use.local
-  resolution: "@example/014@workspace:examples/noc2-example-014"
+  resolution: "@example/014@workspace:examples/noc2-example-1-04"
   dependencies:
     "@thi.ng/canvas": "workspace:^"
     "@thi.ng/geom": "workspace:^"
@@ -1678,9 +1678,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@example/noc2-example-001@workspace:examples/noc2-example-001":
+"@example/noc2-example-001@workspace:examples/noc2-example-0-01":
   version: 0.0.0-use.local
-  resolution: "@example/noc2-example-001@workspace:examples/noc2-example-001"
+  resolution: "@example/noc2-example-001@workspace:examples/noc2-example-0-01"
   dependencies:
     "@thi.ng/hiccup": "workspace:^"
     "@thi.ng/hiccup-canvas": "workspace:^"
@@ -1691,9 +1691,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@example/noc2-example-002@workspace:examples/noc2-example-002":
+"@example/noc2-example-002@workspace:examples/noc2-example-0-02":
   version: 0.0.0-use.local
-  resolution: "@example/noc2-example-002@workspace:examples/noc2-example-002"
+  resolution: "@example/noc2-example-002@workspace:examples/noc2-example-0-02"
   dependencies:
     "@thi.ng/hiccup": "workspace:^"
     "@thi.ng/hiccup-canvas": "workspace:^"
@@ -1704,9 +1704,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@example/noc2-example-003@workspace:examples/noc2-example-003":
+"@example/noc2-example-003@workspace:examples/noc2-example-0-03":
   version: 0.0.0-use.local
-  resolution: "@example/noc2-example-003@workspace:examples/noc2-example-003"
+  resolution: "@example/noc2-example-003@workspace:examples/noc2-example-0-03"
   dependencies:
     "@thi.ng/canvas": "workspace:^"
     "@thi.ng/color": "workspace:^"
@@ -1722,9 +1722,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@example/noc2-example-004@workspace:examples/noc2-example-004":
+"@example/noc2-example-004@workspace:examples/noc2-example-0-04":
   version: 0.0.0-use.local
-  resolution: "@example/noc2-example-004@workspace:examples/noc2-example-004"
+  resolution: "@example/noc2-example-004@workspace:examples/noc2-example-0-04"
   dependencies:
     "@thi.ng/canvas": "workspace:^"
     "@thi.ng/geom": "workspace:^"
@@ -1735,9 +1735,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@example/noc2-example-005@workspace:examples/noc2-example-005":
+"@example/noc2-example-005@workspace:examples/noc2-example-0-05":
   version: 0.0.0-use.local
-  resolution: "@example/noc2-example-005@workspace:examples/noc2-example-005"
+  resolution: "@example/noc2-example-005@workspace:examples/noc2-example-0-05"
   dependencies:
     "@thi.ng/hiccup": "workspace:^"
     "@thi.ng/hiccup-canvas": "workspace:^"
@@ -1747,22 +1747,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@example/noc2-example-006@workspace:examples/noc2-example-006":
+"@example/noc2-example-006@workspace:examples/noc2-example-0-06":
   version: 0.0.0-use.local
-  resolution: "@example/noc2-example-006@workspace:examples/noc2-example-006"
-  dependencies:
-    "@thi.ng/hiccup": "workspace:^"
-    "@thi.ng/hiccup-canvas": "workspace:^"
-    "@thi.ng/random": "workspace:^"
-    "@thi.ng/vectors": "workspace:^"
-    typescript: "npm:^5.8.3"
-    vite: "npm:^6.3.5"
-  languageName: unknown
-  linkType: soft
-
-"@example/noc2-example-011@workspace:examples/noc2-example-011":
-  version: 0.0.0-use.local
-  resolution: "@example/noc2-example-011@workspace:examples/noc2-example-011"
+  resolution: "@example/noc2-example-006@workspace:examples/noc2-example-0-06"
   dependencies:
     "@thi.ng/hiccup": "workspace:^"
     "@thi.ng/hiccup-canvas": "workspace:^"
@@ -1773,9 +1760,22 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@example/noc2-example-012@workspace:examples/noc2-example-012":
+"@example/noc2-example-011@workspace:examples/noc2-example-1-01":
   version: 0.0.0-use.local
-  resolution: "@example/noc2-example-012@workspace:examples/noc2-example-012"
+  resolution: "@example/noc2-example-011@workspace:examples/noc2-example-1-01"
+  dependencies:
+    "@thi.ng/hiccup": "workspace:^"
+    "@thi.ng/hiccup-canvas": "workspace:^"
+    "@thi.ng/random": "workspace:^"
+    "@thi.ng/vectors": "workspace:^"
+    typescript: "npm:^5.8.3"
+    vite: "npm:^6.3.5"
+  languageName: unknown
+  linkType: soft
+
+"@example/noc2-example-012@workspace:examples/noc2-example-1-02":
+  version: 0.0.0-use.local
+  resolution: "@example/noc2-example-012@workspace:examples/noc2-example-1-02"
   dependencies:
     "@thi.ng/canvas": "workspace:^"
     "@thi.ng/geom": "workspace:^"
@@ -1790,9 +1790,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@example/noc2-example-013@workspace:examples/noc2-example-013":
+"@example/noc2-example-013@workspace:examples/noc2-example-1-03":
   version: 0.0.0-use.local
-  resolution: "@example/noc2-example-013@workspace:examples/noc2-example-013"
+  resolution: "@example/noc2-example-013@workspace:examples/noc2-example-1-03"
   dependencies:
     "@thi.ng/canvas": "workspace:^"
     "@thi.ng/geom": "workspace:^"
@@ -2982,9 +2982,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@example/testing-000@workspace:examples/noc2-example-000":
+"@example/testing-000@workspace:examples/noc2-example-0-00":
   version: 0.0.0-use.local
-  resolution: "@example/testing-000@workspace:examples/noc2-example-000"
+  resolution: "@example/testing-000@workspace:examples/noc2-example-0-00"
   dependencies:
     "@thi.ng/canvas": "workspace:^"
     "@thi.ng/geom": "workspace:^"
@@ -2997,9 +2997,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@example/testing015@workspace:examples/noc2-example-015":
+"@example/testing015@workspace:examples/noc2-example-1-05":
   version: 0.0.0-use.local
-  resolution: "@example/testing015@workspace:examples/noc2-example-015"
+  resolution: "@example/testing015@workspace:examples/noc2-example-1-05"
   dependencies:
     "@thi.ng/canvas": "workspace:^"
     "@thi.ng/geom": "workspace:^"
@@ -3014,9 +3014,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@example/testing016@workspace:examples/noc2-example-016":
+"@example/testing016@workspace:examples/noc2-example-1-06":
   version: 0.0.0-use.local
-  resolution: "@example/testing016@workspace:examples/noc2-example-016"
+  resolution: "@example/testing016@workspace:examples/noc2-example-1-06"
   dependencies:
     "@thi.ng/geom": "workspace:^"
     "@thi.ng/meta-css": "workspace:^"
@@ -3029,9 +3029,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@example/testing017@workspace:examples/noc2-example-017":
+"@example/testing017@workspace:examples/noc2-example-1-07":
   version: 0.0.0-use.local
-  resolution: "@example/testing017@workspace:examples/noc2-example-017"
+  resolution: "@example/testing017@workspace:examples/noc2-example-1-07"
   dependencies:
     "@thi.ng/geom": "workspace:^"
     "@thi.ng/meta-css": "workspace:^"
@@ -3044,55 +3044,46 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@example/testing018@workspace:examples/noc2-example-018":
+"@example/testing018@workspace:examples/noc2-example-1-08":
   version: 0.0.0-use.local
-  resolution: "@example/testing018@workspace:examples/noc2-example-018"
+  resolution: "@example/testing018@workspace:examples/noc2-example-1-08"
   dependencies:
-    "@thi.ng/canvas": "workspace:^"
-    "@thi.ng/color": "workspace:^"
     "@thi.ng/geom": "workspace:^"
-    "@thi.ng/hiccup-canvas": "workspace:^"
-    "@thi.ng/math": "workspace:^"
     "@thi.ng/meta-css": "workspace:^"
     "@thi.ng/random": "workspace:^"
+    "@thi.ng/rdom-canvas": "workspace:^"
     "@thi.ng/rstream": "workspace:^"
-    "@thi.ng/transducers": "workspace:^"
     "@thi.ng/vectors": "workspace:^"
     typescript: "npm:^5.8.3"
     vite: "npm:^6.3.5"
   languageName: unknown
   linkType: soft
 
-"@example/testing019@workspace:examples/noc2-example-019":
+"@example/testing019@workspace:examples/noc2-example-1-09":
   version: 0.0.0-use.local
-  resolution: "@example/testing019@workspace:examples/noc2-example-019"
+  resolution: "@example/testing019@workspace:examples/noc2-example-1-09"
   dependencies:
-    "@thi.ng/canvas": "workspace:^"
-    "@thi.ng/color": "workspace:^"
     "@thi.ng/geom": "workspace:^"
-    "@thi.ng/hiccup-canvas": "workspace:^"
-    "@thi.ng/math": "workspace:^"
     "@thi.ng/meta-css": "workspace:^"
     "@thi.ng/random": "workspace:^"
+    "@thi.ng/rdom-canvas": "workspace:^"
     "@thi.ng/rstream": "workspace:^"
-    "@thi.ng/transducers": "workspace:^"
     "@thi.ng/vectors": "workspace:^"
     typescript: "npm:^5.8.3"
     vite: "npm:^6.3.5"
   languageName: unknown
   linkType: soft
 
-"@example/testing110@workspace:examples/noc2-example-110":
+"@example/testing110@workspace:examples/noc2-example-1-10":
   version: 0.0.0-use.local
-  resolution: "@example/testing110@workspace:examples/noc2-example-110"
+  resolution: "@example/testing110@workspace:examples/noc2-example-1-10"
   dependencies:
-    "@thi.ng/canvas": "workspace:^"
     "@thi.ng/geom": "workspace:^"
-    "@thi.ng/hiccup-canvas": "workspace:^"
     "@thi.ng/meta-css": "workspace:^"
     "@thi.ng/random": "workspace:^"
+    "@thi.ng/rdom-canvas": "workspace:^"
     "@thi.ng/rstream": "workspace:^"
-    "@thi.ng/transducers": "workspace:^"
+    "@thi.ng/rstream-gestures": "workspace:^"
     "@thi.ng/vectors": "workspace:^"
     typescript: "npm:^5.8.3"
     vite: "npm:^6.3.5"

@@ -1,7 +1,6 @@
 import { circle, group, translate } from "@thi.ng/geom";
 import { $canvas } from "@thi.ng/rdom-canvas";
-import { fromEvent, fromRAF } from "@thi.ng/rstream";
-import { gestureStream } from "@thi.ng/rstream-gestures";
+import { fromRAF } from "@thi.ng/rstream";
 import { mulN, normalize, add, randNorm, type Vec, limit, sub } from "@thi.ng/vectors";
 
 const WIDTH = 600;

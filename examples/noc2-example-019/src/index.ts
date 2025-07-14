@@ -1,63 +1,55 @@
-import { type Vec, add, sub, normalize, limit, ZERO2 } from "@thi.ng/vectors";
+import { circle, group, translate } from "@thi.ng/geom";
+import { $canvas } from "@thi.ng/rdom-canvas";
 import { fromRAF } from "@thi.ng/rstream";
-import { canvas2d } from "@thi.ng/canvas";
-import { draw } from "@thi.ng/hiccup-canvas";
-import { circle, line } from "@thi.ng/geom";
+import { mulN, normalize, add, randNorm, type Vec, limit } from "@thi.ng/vectors";
 
-// SETUP
-const WIDTH = 640;
-const HEIGHT = 240;
-const { ctx } = canvas2d(WIDTH, HEIGHT, document.getElementById("app"));
+const WIDTH = 600;
+const HEIGHT = 600;
+const RADIUS = 24;
 
-interface Mover {
-	pos: Vec;
-	vel: Vec;
-}
+let pos: Vec = [300, 300];
+let vel: Vec = [0, 0];
+let acc: Vec = [-0.001, 0.01];
 
-interface AppState {
-	mover: Mover;
-}
+// acc = limit([], acc, 10);
 
-let state: AppState = {
-	mover: {
-		pos: [100, 100],
-		vel: [2.5, 2]
-	},
-};
+// create geometry stream/subscription
+const geo = fromRAF().map(() => {
+	vel = limit(null, vel, 10);
+	acc = randNorm(acc);
+	acc = mulN(null, acc, 0.5);
 
-// UPDATE
-const update = (currentState: AppState): AppState => {
-	const mover = { ...currentState.mover };
-	mover.pos = add(null, mover.pos, mover.vel);
+	add(vel, vel, acc);
+	add(pos, pos, vel);
 
-	// Edges
-	if (mover.pos[0] > WIDTH || mover.pos[0] < 0) {
-		mover.vel[0] = mover.vel[0] * -1;
-	}
-	if (mover.pos[1] > HEIGHT || mover.pos[1] < 0) {
-		mover.vel[1] = mover.vel[1] * -1;
+	if (pos[0] > WIDTH) {
+		pos[0] = 0;
+	} else if (pos[0] < 0) {
+		pos[0] = WIDTH;
 	}
 
-	return {
-		...currentState,
-		mover,
-	};
-};
-
-// VIEW
-const view = (currentState: AppState) => [
-	"g", {},
-	["rect", { fill: "#333" }, [0, 0], WIDTH, HEIGHT],
-	["g", { fill: "none", stroke: "#fff", "stroke-width": 2 },
-		circle(currentState.mover.pos, 24)
-	]
-];
-
-fromRAF().subscribe({
-	next() {
-		const newState = update(state);
-		const scene = view(newState);
-		draw(ctx, scene);
-		state = newState;
+	if (pos[1] > HEIGHT) {
+		pos[1] = 0;
+	} else if (pos[1] < 0) {
+		pos[1] = HEIGHT;
 	}
+
+	// if (pos[0] < RADIUS || pos[0] > WIDTH - RADIUS) {
+	// 	vel[0] *= -1;
+	// }
+	// if (pos[1] < RADIUS || pos[1] > HEIGHT - RADIUS) {
+	// 	vel[1] *= -1;
+	// }
+
+	return group(
+		{ __background: "#0ff" },
+		[
+			group({ stroke: "#000", weight: 2 }, [
+				circle(pos, RADIUS)
+			]),
+		]
+	);
 });
+
+// create & mount canvas component
+$canvas(geo, [WIDTH, HEIGHT]).mount(document.getElementById("app")!);

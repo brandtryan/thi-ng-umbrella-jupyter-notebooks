@@ -3090,6 +3090,150 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@example/testing201@workspace:examples/noc2-example-2-01":
+  version: 0.0.0-use.local
+  resolution: "@example/testing201@workspace:examples/noc2-example-2-01"
+  dependencies:
+    "@thi.ng/geom": "workspace:^"
+    "@thi.ng/meta-css": "workspace:^"
+    "@thi.ng/random": "workspace:^"
+    "@thi.ng/rdom-canvas": "workspace:^"
+    "@thi.ng/rstream": "workspace:^"
+    "@thi.ng/rstream-gestures": "workspace:^"
+    "@thi.ng/vectors": "workspace:^"
+    typescript: "npm:^5.8.3"
+    vite: "npm:^6.3.5"
+  languageName: unknown
+  linkType: soft
+
+"@example/testing202@workspace:examples/noc2-example-2-02":
+  version: 0.0.0-use.local
+  resolution: "@example/testing202@workspace:examples/noc2-example-2-02"
+  dependencies:
+    "@thi.ng/geom": "workspace:^"
+    "@thi.ng/meta-css": "workspace:^"
+    "@thi.ng/random": "workspace:^"
+    "@thi.ng/rdom-canvas": "workspace:^"
+    "@thi.ng/rstream": "workspace:^"
+    "@thi.ng/rstream-gestures": "workspace:^"
+    "@thi.ng/vectors": "workspace:^"
+    typescript: "npm:^5.8.3"
+    vite: "npm:^6.3.5"
+  languageName: unknown
+  linkType: soft
+
+"@example/testing203@workspace:examples/noc2-example-2-03":
+  version: 0.0.0-use.local
+  resolution: "@example/testing203@workspace:examples/noc2-example-2-03"
+  dependencies:
+    "@thi.ng/geom": "workspace:^"
+    "@thi.ng/meta-css": "workspace:^"
+    "@thi.ng/random": "workspace:^"
+    "@thi.ng/rdom-canvas": "workspace:^"
+    "@thi.ng/rstream": "workspace:^"
+    "@thi.ng/rstream-gestures": "workspace:^"
+    "@thi.ng/vectors": "workspace:^"
+    typescript: "npm:^5.8.3"
+    vite: "npm:^6.3.5"
+  languageName: unknown
+  linkType: soft
+
+"@example/testing204@workspace:examples/noc2-example-2-04":
+  version: 0.0.0-use.local
+  resolution: "@example/testing204@workspace:examples/noc2-example-2-04"
+  dependencies:
+    "@thi.ng/geom": "workspace:^"
+    "@thi.ng/meta-css": "workspace:^"
+    "@thi.ng/random": "workspace:^"
+    "@thi.ng/rdom-canvas": "workspace:^"
+    "@thi.ng/rstream": "workspace:^"
+    "@thi.ng/rstream-gestures": "workspace:^"
+    "@thi.ng/vectors": "workspace:^"
+    typescript: "npm:^5.8.3"
+    vite: "npm:^6.3.5"
+  languageName: unknown
+  linkType: soft
+
+"@example/testing205@workspace:examples/noc2-example-2-05":
+  version: 0.0.0-use.local
+  resolution: "@example/testing205@workspace:examples/noc2-example-2-05"
+  dependencies:
+    "@thi.ng/geom": "workspace:^"
+    "@thi.ng/meta-css": "workspace:^"
+    "@thi.ng/random": "workspace:^"
+    "@thi.ng/rdom-canvas": "workspace:^"
+    "@thi.ng/rstream": "workspace:^"
+    "@thi.ng/rstream-gestures": "workspace:^"
+    "@thi.ng/vectors": "workspace:^"
+    typescript: "npm:^5.8.3"
+    vite: "npm:^6.3.5"
+  languageName: unknown
+  linkType: soft
+
+"@example/testing206@workspace:examples/noc2-example-2-06":
+  version: 0.0.0-use.local
+  resolution: "@example/testing206@workspace:examples/noc2-example-2-06"
+  dependencies:
+    "@thi.ng/geom": "workspace:^"
+    "@thi.ng/meta-css": "workspace:^"
+    "@thi.ng/random": "workspace:^"
+    "@thi.ng/rdom-canvas": "workspace:^"
+    "@thi.ng/rstream": "workspace:^"
+    "@thi.ng/rstream-gestures": "workspace:^"
+    "@thi.ng/vectors": "workspace:^"
+    typescript: "npm:^5.8.3"
+    vite: "npm:^6.3.5"
+  languageName: unknown
+  linkType: soft
+
+"@example/testing207@workspace:examples/noc2-example-2-07":
+  version: 0.0.0-use.local
+  resolution: "@example/testing207@workspace:examples/noc2-example-2-07"
+  dependencies:
+    "@thi.ng/geom": "workspace:^"
+    "@thi.ng/meta-css": "workspace:^"
+    "@thi.ng/random": "workspace:^"
+    "@thi.ng/rdom-canvas": "workspace:^"
+    "@thi.ng/rstream": "workspace:^"
+    "@thi.ng/rstream-gestures": "workspace:^"
+    "@thi.ng/vectors": "workspace:^"
+    typescript: "npm:^5.8.3"
+    vite: "npm:^6.3.5"
+  languageName: unknown
+  linkType: soft
+
+"@example/testing208@workspace:examples/noc2-example-2-08":
+  version: 0.0.0-use.local
+  resolution: "@example/testing208@workspace:examples/noc2-example-2-08"
+  dependencies:
+    "@thi.ng/geom": "workspace:^"
+    "@thi.ng/meta-css": "workspace:^"
+    "@thi.ng/random": "workspace:^"
+    "@thi.ng/rdom-canvas": "workspace:^"
+    "@thi.ng/rstream": "workspace:^"
+    "@thi.ng/rstream-gestures": "workspace:^"
+    "@thi.ng/vectors": "workspace:^"
+    typescript: "npm:^5.8.3"
+    vite: "npm:^6.3.5"
+  languageName: unknown
+  linkType: soft
+
+"@example/testing209@workspace:examples/noc2-example-2-09":
+  version: 0.0.0-use.local
+  resolution: "@example/testing209@workspace:examples/noc2-example-2-09"
+  dependencies:
+    "@thi.ng/geom": "workspace:^"
+    "@thi.ng/meta-css": "workspace:^"
+    "@thi.ng/random": "workspace:^"
+    "@thi.ng/rdom-canvas": "workspace:^"
+    "@thi.ng/rstream": "workspace:^"
+    "@thi.ng/rstream-gestures": "workspace:^"
+    "@thi.ng/vectors": "workspace:^"
+    typescript: "npm:^5.8.3"
+    vite: "npm:^6.3.5"
+  languageName: unknown
+  linkType: soft
+
 "@example/testing@workspace:examples/noc2-test-things":
   version: 0.0.0-use.local
   resolution: "@example/testing@workspace:examples/noc2-test-things"
